@@ -2,6 +2,20 @@ import React, { Component } from "react";
 import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      props: props,
+      selectedDie: ""
+    };
+
+    this.rollDice = this.rollDice.bind(this);
+  }
+
+  rollDice(event) {
+    alert("something happened!");
+  }
+
   render() {
     return (
       <div className="App">
@@ -12,22 +26,42 @@ class App extends Component {
           <div class="w3-row">
             <div class="w3-col m6 w3-center">
               <div class="w3-dropdown-hover">
-                <button class="w3-button w3-black">Hover Over Me!</button>
+                <button class="w3-button w3-black">Choose Dice</button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
-                  <a href="#" class="w3-bar-item w3-button">
-                    Link 1
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    Coin
                   </a>
-                  <a href="#" class="w3-bar-item w3-button">
-                    Link 2
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    d2
                   </a>
-                  <a href="#" class="w3-bar-item w3-button">
-                    Link 3
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    d4
+                  </a>
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    d6
+                  </a>
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    d8
+                  </a>
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    d10
+                  </a>
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    d12
+                  </a>
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    d20
+                  </a>
+                  <a onClick="#" class="w3-bar-item w3-button">
+                    Percentage
                   </a>
                 </div>
               </div>
             </div>
             <div class="w3-col m6 w3-center">
-              <button class="w3-button w3-black">Button Button</button>
+              <button class="w3-button w3-black" onClick={this.rollDice}>
+                Roll
+              </button>
             </div>
           </div>
         </div>
