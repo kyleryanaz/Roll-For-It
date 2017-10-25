@@ -1,15 +1,23 @@
 .App {
   text-align: center;
-  background-color: rgb(128, 128, 128);
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
 
+.App-toolbar {
+  background-color: #222;
+  height: 50px;
+}
+
 .App-title {
   font-size: 1.5em;
+}
+
+.rollButton {
+  padding-left: 10px;
 }
