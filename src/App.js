@@ -6,15 +6,44 @@ class App extends Component {
     super(props);
     this.state = {
       props: props,
-      selectedDie: ""
+      selectedDie: "",
+      result: ""
     };
 
     this.rollDice = this.rollDice.bind(this);
     this.chooseDie = this.chooseDie.bind(this);
+    this.coinToss = this.coinToss.bind(this);
   }
 
   rollDice(event) {
-    console.log("rollDice");
+    switch (this.state.selectedDie) {
+      case "coin":
+        let result = Math.random() < 0.5 ? "heads" : "tails";
+        console.log(result);
+        break;
+      case "d4":
+        console.log("d4");
+        break;
+      case "d6":
+        console.log("d6");
+        break;
+      case "d8":
+        console.log("d8");
+        break;
+      case "d10":
+        console.log("d10");
+        break;
+      case "d12":
+        console.log("d12");
+        break;
+      case "d20":
+        console.log("d20");
+        break;
+      case "percentage":
+        console.log("percentage");
+        break;
+      default:
+    }
   }
 
   chooseDie(event) {
@@ -22,6 +51,16 @@ class App extends Component {
       ...this.state,
       selectedDie: event.target.id
     });
+  }
+
+  coinToss(event) {
+    // This function will randomly return either 'heads' or 'tails'.
+    const result = Math.random() < 0.5 ? "heads" : "tails";
+    if (result === "heads") {
+      console.log("heads");
+    } else {
+      console.log("tails");
+    }
   }
 
   render() {
