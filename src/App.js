@@ -18,29 +18,36 @@ class App extends Component {
   rollDice(event) {
     switch (this.state.selectedDie) {
       case "coin":
-        let result = Math.random() < 0.5 ? "heads" : "tails";
-        console.log(result);
+        let coinResult = Math.random() < 0.5 ? "heads" : "tails";
+        console.log(coinResult);
         break;
       case "d4":
-        console.log("d4");
+        let d4Result = Math.floor(Math.random() * 4) + 1;
+        console.log(d4Result);
         break;
       case "d6":
-        console.log("d6");
+        let d6Result = Math.floor(Math.random() * 6) + 1;
+        console.log(d6Result);
         break;
       case "d8":
-        console.log("d8");
+        let d8Result = Math.floor(Math.random() * 8) + 1;
+        console.log(d8Result);
         break;
       case "d10":
-        console.log("d10");
+        let d10Result = Math.floor(Math.random() * 10) + 1;
+        console.log(d10Result);
         break;
       case "d12":
-        console.log("d12");
+        let d12Result = Math.floor(Math.random() * 12) + 1;
+        console.log(d12Result);
         break;
       case "d20":
-        console.log("d20");
+        let d20Result = Math.floor(Math.random() * 20) + 1;
+        console.log(d20Result);
         break;
       case "percentage":
-        console.log("percentage");
+        let percentageResult = Math.floor(Math.random() * 100) + 1;
+        console.log(percentageResult);
         break;
       default:
     }
