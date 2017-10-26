@@ -10,10 +10,18 @@ class App extends Component {
     };
 
     this.rollDice = this.rollDice.bind(this);
+    this.chooseDie = this.chooseDie.bind(this);
   }
 
   rollDice(event) {
-    alert("something happened!");
+    console.log("rollDice");
+  }
+
+  chooseDie(event) {
+    this.setState({
+      ...this.state,
+      selectedDie: event.target.id
+    });
   }
 
   render() {
@@ -26,33 +34,66 @@ class App extends Component {
           <div class="w3-row">
             <div class="w3-col m6 w3-center">
               <div class="w3-dropdown-hover">
-                <button class="w3-button w3-black">Choose Dice</button>
+                <button class="w3-button w3-black">Choose a Die</button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
-                  <a onClick="#" class="w3-bar-item w3-button">
+                  <a
+                    //ways to keep a function from firing before it is called
+                    //this.function
+                    //event => this.function(event)
+                    //()=> this.function()
+                    id="coin"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
                     Coin
                   </a>
-                  <a onClick="#" class="w3-bar-item w3-button">
-                    d2
-                  </a>
-                  <a onClick="#" class="w3-bar-item w3-button">
+                  <a
+                    id="d4"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
                     d4
                   </a>
-                  <a onClick="#" class="w3-bar-item w3-button">
+                  <a
+                    id="d6"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
                     d6
                   </a>
-                  <a onClick="#" class="w3-bar-item w3-button">
+                  <a
+                    id="d8"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
                     d8
                   </a>
-                  <a onClick="#" class="w3-bar-item w3-button">
+                  <a
+                    id="d10"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
                     d10
                   </a>
-                  <a onClick="#" class="w3-bar-item w3-button">
+                  <a
+                    id="d12"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
                     d12
                   </a>
-                  <a onClick="#" class="w3-bar-item w3-button">
+                  <a
+                    id="d20"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
                     d20
                   </a>
-                  <a onClick="#" class="w3-bar-item w3-button">
+                  <a
+                    id="percentage"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
                     Percentage
                   </a>
                 </div>
