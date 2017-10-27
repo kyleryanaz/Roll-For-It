@@ -12,42 +12,67 @@ class App extends Component {
 
     this.rollDice = this.rollDice.bind(this);
     this.chooseDie = this.chooseDie.bind(this);
-    this.coinToss = this.coinToss.bind(this);
+    // this.coinToss = this.coinToss.bind(this);
   }
 
   rollDice(event) {
     switch (this.state.selectedDie) {
       case "coin":
         let coinResult = Math.random() < 0.5 ? "heads" : "tails";
-        console.log(coinResult);
+        this.setState({
+          ...this.state,
+          result: coinResult
+        });
+
         break;
       case "d4":
         let d4Result = Math.floor(Math.random() * 4) + 1;
-        console.log(d4Result);
+        this.setState({
+          ...this.state,
+          result: d4Result
+        });
         break;
       case "d6":
         let d6Result = Math.floor(Math.random() * 6) + 1;
-        console.log(d6Result);
+        this.setState({
+          ...this.state,
+          result: d6Result
+        });
         break;
       case "d8":
         let d8Result = Math.floor(Math.random() * 8) + 1;
-        console.log(d8Result);
+        this.setState({
+          ...this.state,
+          result: d8Result
+        });
         break;
       case "d10":
         let d10Result = Math.floor(Math.random() * 10) + 1;
-        console.log(d10Result);
+        this.setState({
+          ...this.state,
+          result: d10Result
+        });
         break;
       case "d12":
         let d12Result = Math.floor(Math.random() * 12) + 1;
-        console.log(d12Result);
+        this.setState({
+          ...this.state,
+          result: d12Result
+        });
         break;
       case "d20":
         let d20Result = Math.floor(Math.random() * 20) + 1;
-        console.log(d20Result);
+        this.setState({
+          ...this.state,
+          result: d20Result
+        });
         break;
       case "percentage":
         let percentageResult = Math.floor(Math.random() * 100) + 1;
-        console.log(percentageResult);
+        this.setState({
+          ...this.state,
+          result: percentageResult
+        });
         break;
       default:
     }
@@ -58,16 +83,6 @@ class App extends Component {
       ...this.state,
       selectedDie: event.target.id
     });
-  }
-
-  coinToss(event) {
-    // This function will randomly return either 'heads' or 'tails'.
-    const result = Math.random() < 0.5 ? "heads" : "tails";
-    if (result === "heads") {
-      console.log("heads");
-    } else {
-      console.log("tails");
-    }
   }
 
   render() {
