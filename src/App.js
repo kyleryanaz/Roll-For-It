@@ -17,8 +17,8 @@ class App extends Component {
 
   rollDice(event) {
     switch (this.state.selectedDie) {
-      case "coin":
-        let coinResult = Math.random() < 0.5 ? "heads" : "tails";
+      case "Coin":
+        let coinResult = Math.random() < 0.5 ? "Heads" : "Tails";
         this.setState({
           ...this.state,
           result: coinResult
@@ -67,7 +67,7 @@ class App extends Component {
           result: d20Result
         });
         break;
-      case "percentage":
+      case "Percentage":
         let percentageResult = Math.floor(Math.random() * 100) + 1;
         this.setState({
           ...this.state,
@@ -93,7 +93,7 @@ class App extends Component {
         </header>
         <div className="App-toolbar">
           <div class="w3-row">
-            <div class="w3-col m6 w3-center">
+            <div class="w3-col m4 w3-center">
               <div class="w3-dropdown-hover">
                 <button class="w3-button w3-black">Choose a Die</button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
@@ -102,7 +102,7 @@ class App extends Component {
                     //this.function
                     //event => this.function(event)
                     //()=> this.function()
-                    id="coin"
+                    id="Coin"
                     onClick={this.chooseDie}
                     class="w3-bar-item w3-button"
                   >
@@ -151,7 +151,7 @@ class App extends Component {
                     d20
                   </a>
                   <a
-                    id="percentage"
+                    id="Percentage"
                     onClick={this.chooseDie}
                     class="w3-bar-item w3-button"
                   >
@@ -160,13 +160,20 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <div class="w3-col m6 w3-center">
+            <div class="w3-col m4 w3-center">
+              <div id="dieDisplay">
+                <h2>{this.state.selectedDie}</h2>
+              </div>
+            </div>
+            <div class="w3-col m4 w3-center">
               <button class="w3-button w3-black" onClick={this.rollDice}>
                 Roll
               </button>
             </div>
           </div>
         </div>
+        <br />
+        <h2>{this.state.result}</h2>
       </div>
     );
   }
