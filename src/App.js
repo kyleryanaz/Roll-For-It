@@ -6,9 +6,9 @@ class App extends Component {
     super(props);
     this.state = {
       props: props,
-      selectedDie: "",
-      selectedMultiplier: "",
-      result: ""
+      selectedDie: "∞",
+      selectedMultiplier: "∞",
+      result: "∞"
     };
 
     this.rollDice = this.rollDice.bind(this);
@@ -28,42 +28,48 @@ class App extends Component {
 
         break;
       case "d4":
-        let d4Result = Math.floor(Math.random() * 4) + 1;
+        let d4Result =
+          (Math.floor(Math.random() * 4) + 1) * this.state.selectedMultiplier;
         this.setState({
           ...this.state,
           result: d4Result
         });
         break;
       case "d6":
-        let d6Result = Math.floor(Math.random() * 6) + 1;
+        let d6Result =
+          (Math.floor(Math.random() * 6) + 1) * this.state.selectedMultiplier;
         this.setState({
           ...this.state,
           result: d6Result
         });
         break;
       case "d8":
-        let d8Result = Math.floor(Math.random() * 8) + 1;
+        let d8Result =
+          (Math.floor(Math.random() * 8) + 1) * this.state.selectedMultiplier;
         this.setState({
           ...this.state,
           result: d8Result
         });
         break;
       case "d10":
-        let d10Result = Math.floor(Math.random() * 10) + 1;
+        let d10Result =
+          (Math.floor(Math.random() * 10) + 1) * this.state.selectedMultiplier;
         this.setState({
           ...this.state,
           result: d10Result
         });
         break;
       case "d12":
-        let d12Result = Math.floor(Math.random() * 12) + 1;
+        let d12Result =
+          (Math.floor(Math.random() * 12) + 1) * this.state.selectedMultiplier;
         this.setState({
           ...this.state,
           result: d12Result
         });
         break;
       case "d20":
-        let d20Result = Math.floor(Math.random() * 20) + 1;
+        let d20Result =
+          (Math.floor(Math.random() * 20) + 1) * this.state.selectedMultiplier;
         this.setState({
           ...this.state,
           result: d20Result
@@ -90,7 +96,7 @@ class App extends Component {
   chooseMultiplier(event) {
     this.setState({
       ...this.state,
-      selectedMultiplier: event.target.id
+      selectedMultiplier: Number(event.target.id)
     });
   }
 
@@ -114,129 +120,128 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <div id="buttonRow">
-            <div class="w3-row">
-              <div class="w3-col m4 w3-center">
-                <div class="w3-dropdown-hover">
-                  <button class="w3-button w3-black">Quantity</button>
-                  <div class="w3-dropdown-content w3-bar-block w3-border">
-                    <a
-                      id="1"
-                      onClick={this.chooseMultiplier}
-                      class="w3-bar-item w3-button"
-                    >
-                      1
-                    </a>
-                    <a
-                      id="2"
-                      onClick={this.chooseMultiplier}
-                      class="w3-bar-item w3-button"
-                    >
-                      2
-                    </a>
-                    <a
-                      id="3"
-                      onClick={this.chooseMultiplier}
-                      class="w3-bar-item w3-button"
-                    >
-                      3
-                    </a>
-                    <a
-                      id="4"
-                      onClick={this.chooseMultiplier}
-                      class="w3-bar-item w3-button"
-                    >
-                      4
-                    </a>
-                    <a
-                      id="5"
-                      onClick={this.chooseMultiplier}
-                      class="w3-bar-item w3-button"
-                    >
-                      5
-                    </a>
-                    <a
-                      id="6"
-                      onClick={this.chooseMultiplier}
-                      class="w3-bar-item w3-button"
-                    >
-                      6
-                    </a>
-                  </div>
+
+          <div class="w3-row">
+            <div class="w3-col m4 w3-center">
+              <div class="w3-dropdown-hover">
+                <button class="w3-button w3-black">Quantity</button>
+                <div class="w3-dropdown-content w3-bar-block w3-border">
+                  <a
+                    id="1"
+                    onClick={this.chooseMultiplier}
+                    class="w3-bar-item w3-button"
+                  >
+                    1
+                  </a>
+                  <a
+                    id="2"
+                    onClick={this.chooseMultiplier}
+                    class="w3-bar-item w3-button"
+                  >
+                    2
+                  </a>
+                  <a
+                    id="3"
+                    onClick={this.chooseMultiplier}
+                    class="w3-bar-item w3-button"
+                  >
+                    3
+                  </a>
+                  <a
+                    id="4"
+                    onClick={this.chooseMultiplier}
+                    class="w3-bar-item w3-button"
+                  >
+                    4
+                  </a>
+                  <a
+                    id="5"
+                    onClick={this.chooseMultiplier}
+                    class="w3-bar-item w3-button"
+                  >
+                    5
+                  </a>
+                  <a
+                    id="6"
+                    onClick={this.chooseMultiplier}
+                    class="w3-bar-item w3-button"
+                  >
+                    6
+                  </a>
                 </div>
               </div>
-              <div class="w3-col m4 w3-center">
-                <div class="w3-dropdown-hover">
-                  <button class="w3-button w3-black">Dice</button>
-                  <div class="w3-dropdown-content w3-bar-block w3-border">
-                    <a
-                      //ways to keep a function from firing before it is called
-                      //this.function
-                      //event => this.function(event)
-                      //()=> this.function()
-                      id="Coin"
-                      onClick={this.chooseDie}
-                      class="w3-bar-item w3-button"
-                    >
-                      Coin
-                    </a>
-                    <a
-                      id="d4"
-                      onClick={this.chooseDie}
-                      class="w3-bar-item w3-button"
-                    >
-                      d4
-                    </a>
-                    <a
-                      id="d6"
-                      onClick={this.chooseDie}
-                      class="w3-bar-item w3-button"
-                    >
-                      d6
-                    </a>
-                    <a
-                      id="d8"
-                      onClick={this.chooseDie}
-                      class="w3-bar-item w3-button"
-                    >
-                      d8
-                    </a>
-                    <a
-                      id="d10"
-                      onClick={this.chooseDie}
-                      class="w3-bar-item w3-button"
-                    >
-                      d10
-                    </a>
-                    <a
-                      id="d12"
-                      onClick={this.chooseDie}
-                      class="w3-bar-item w3-button"
-                    >
-                      d12
-                    </a>
-                    <a
-                      id="d20"
-                      onClick={this.chooseDie}
-                      class="w3-bar-item w3-button"
-                    >
-                      d20
-                    </a>
-                    <a
-                      id="Percentage"
-                      onClick={this.chooseDie}
-                      class="w3-bar-item w3-button"
-                    >
-                      Percentage
-                    </a>
-                  </div>
+            </div>
+            <div class="w3-col m4 w3-center">
+              <div class="w3-dropdown-hover">
+                <button class="w3-button w3-black">Dice</button>
+                <div class="w3-dropdown-content w3-bar-block w3-border">
+                  <a
+                    //ways to keep a function from firing before it is called
+                    //this.function
+                    //event => this.function(event)
+                    //()=> this.function()
+                    id="Coin"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
+                    Coin
+                  </a>
+                  <a
+                    id="d4"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
+                    d4
+                  </a>
+                  <a
+                    id="d6"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
+                    d6
+                  </a>
+                  <a
+                    id="d8"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
+                    d8
+                  </a>
+                  <a
+                    id="d10"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
+                    d10
+                  </a>
+                  <a
+                    id="d12"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
+                    d12
+                  </a>
+                  <a
+                    id="d20"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
+                    d20
+                  </a>
+                  <a
+                    id="Percentage"
+                    onClick={this.chooseDie}
+                    class="w3-bar-item w3-button"
+                  >
+                    Percentage
+                  </a>
                 </div>
               </div>
-              <div class="w3-col m4 w3-center">
-                <button class="w3-button w3-black" onClick={this.rollDice}>
-                  Roll
-                </button>
-              </div>
+            </div>
+            <div class="w3-col m4 w3-center">
+              <button class="w3-button w3-black" onClick={this.rollDice}>
+                Roll
+              </button>
             </div>
           </div>
         </div>
