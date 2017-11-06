@@ -25,61 +25,26 @@ class App extends Component {
           ...this.state,
           result: coinResult
         });
-
-        break;
-      case "d4":
-        let d4Result =
-          (Math.floor(Math.random() * 4) + 1) * this.state.selectedMultiplier;
-        this.setState({
-          ...this.state,
-          result: d4Result
-        });
-        break;
-      case "d6":
-        let d6Result =
-          (Math.floor(Math.random() * 6) + 1) * this.state.selectedMultiplier;
-        this.setState({
-          ...this.state,
-          result: d6Result
-        });
-        break;
-      case "d8":
-        let d8Result =
-          (Math.floor(Math.random() * 8) + 1) * this.state.selectedMultiplier;
-        this.setState({
-          ...this.state,
-          result: d8Result
-        });
-        break;
-      case "d10":
-        let d10Result =
-          (Math.floor(Math.random() * 10) + 1) * this.state.selectedMultiplier;
-        this.setState({
-          ...this.state,
-          result: d10Result
-        });
-        break;
-      case "d12":
-        let d12Result =
-          (Math.floor(Math.random() * 12) + 1) * this.state.selectedMultiplier;
-        this.setState({
-          ...this.state,
-          result: d12Result
-        });
-        break;
-      case "d20":
-        let d20Result =
-          (Math.floor(Math.random() * 20) + 1) * this.state.selectedMultiplier;
-        this.setState({
-          ...this.state,
-          result: d20Result
-        });
         break;
       case "Percentage":
         let percentageResult = Math.floor(Math.random() * 100) + 1;
         this.setState({
           ...this.state,
           result: percentageResult
+        });
+        break;
+      case "d4":
+      case "d6":
+      case "d8":
+      case "d10":
+      case "d12":
+      case "d20":
+        let diceResult =
+          (Math.floor(Math.random() * this.state.selectedDie.slice(1)) + 1) *
+          this.state.selectedMultiplier;
+        this.setState({
+          ...this.state,
+          result: diceResult
         });
         break;
       default:
