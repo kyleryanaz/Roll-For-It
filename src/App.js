@@ -39,9 +39,12 @@ class App extends Component {
       case "d10":
       case "d12":
       case "d20":
-        let diceResult =
-          (Math.floor(Math.random() * this.state.selectedDie.slice(1)) + 1) *
-          this.state.selectedMultiplier;
+        let diceResult = 0;
+        for (let i = 0; i < this.state.selectedMultiplier; i++) {
+          diceResult =
+            diceResult +
+            (Math.floor(Math.random() * this.state.selectedDie.slice(1)) + 1);
+        }
         this.setState({
           ...this.state,
           result: diceResult
