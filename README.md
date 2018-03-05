@@ -1,3 +1,9 @@
+## Roll-For-It
+
+- Author: Kyle Ryan
+
+- Description: A dice rolling app composed of two dropdowns, each influencing the state, and a button that generates a random number based on the current state.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
