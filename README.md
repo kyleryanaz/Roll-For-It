@@ -2,7 +2,7 @@
 
 - Author: Kyle Ryan
 
-- Description: A dice rolling app composed of two dropdowns, each influencing the state, and a button that generates a random number based on the current state.
+- Description: A dice rolling app composed of two dropdowns, each influencing the state, and a button that generates a random number based on the current state. Choose the type of die (d4, d6, d8, d10, d12, or d20) and the number of dice. Then click roll to get a total.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
